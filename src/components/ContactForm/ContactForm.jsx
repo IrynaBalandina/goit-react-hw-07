@@ -64,7 +64,7 @@ id={nameId}
 <label className = {style.label} htmlFor={phoneId}>Number</label>
 <Field 
 className= {style.field}
-type="text" 
+type="phone" 
 name="number" 
 
 placeholder = "+38xxxxxxxxxx" 
