@@ -25,7 +25,7 @@ number: Yup.string().required("Number is required").matches(phoneNumberRegex, "I
 
 
 const ContactForm = () => {
-  const contacts = useSelector((state) => state.contacts.value);
+  
   const dispatch = useDispatch();
 
   const nameId = useId();
