@@ -6,7 +6,7 @@ import style from './ContactForm.module.css';
 
 import { addContact } from '../../redux/contactsOps';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 
 
 const INITIAL_VALUES = {
@@ -38,8 +38,8 @@ const ContactForm = () => {
      number: values.number,
      id: nanoid(),
    };
+   dispatch(addContact(newContact));
    actions.resetForm();
-    dispatch(addContact(newContact));;
  };
 
 
@@ -66,7 +66,8 @@ id={nameId}
 className= {style.field}
 type="text" 
 name="number" 
-placeholder="+38xxxxxxxxxx" 
+
+placeholder = "+38xxxxxxxxxx" 
 id = {phoneId}/>
 <ErrorMessage name="number" component="span" />
 

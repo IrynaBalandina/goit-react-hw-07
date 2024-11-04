@@ -1,13 +1,13 @@
 .contact{
-  border: 1px solid;
-  border-radius: 5px;
-  font-size: 12px;
-  font-weight: bold;
-
-  max-width: 300px;
-  max-height: 100px;
-  margin-right: 60px;
+  width: 310px;
+  border: 1px solid white;
+  border-radius: 7px;
+  padding: 10px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 6px;
+border: 1px solid;
   
 }
 

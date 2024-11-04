@@ -4,7 +4,7 @@ import { fetchContacts,addContact, deleteContact } from "./contactsOps";
 
 
 const INITIAL_STATE = {
-  contacts: [],
+items: null,
   loading: false,
   error: null,
 };
@@ -23,7 +23,7 @@ extraReducers: (builder) =>
 .addCase(fetchContacts.fulfilled, (state, action) => {
   state.loading = false;
         state.error = null;
-        state.contacts = action.payload;
+        state.items = action.payload;
 })
 .addCase(fetchContacts.rejected, (state, action) => {
   state.loading = false;
@@ -36,7 +36,7 @@ extraReducers: (builder) =>
 .addCase(addContact.fulfilled, (state, action) => {
   state.loading = false;
   state.error = null;
-  state.contacts.push(action.payload);
+  state.items.push(action.payload);
 })
 .addCase(addContact.rejected, (state, action) => {
   state.loading = false;
@@ -49,7 +49,7 @@ extraReducers: (builder) =>
 .addCase(deleteContact.fulfilled, (state, action) => {
   state.loading = false;
   state.error = null;
-  state.contacts = state.contacts.filter(contact => contact.id !== action.payload.id);
+  state.items = state.items.filter(item => item.id !== action.payload.id);
 })
 .addCase(deleteContact.rejected, (state, action) => {
   state.loading = false;

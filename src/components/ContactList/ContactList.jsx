@@ -9,14 +9,12 @@ import { useSelector } from "react-redux";
 const ContactList = ()=> {
 
   const filteredContacts = useSelector(selectFilteredContacts);
-
+console.log(filteredContacts);
   
   return (
     <ul className={style.list}>
-     {filteredContacts?.map(({contact }) => (
-        <li key={contact.id} className={style.item}>
-          <Contact data = {contact} />
-        </li>
+      {filteredContacts?.map((contact) => (
+        <Contact key={contact.id} contact={contact} />
       ))}
     </ul>
   );

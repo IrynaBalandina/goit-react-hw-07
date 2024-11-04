@@ -5,14 +5,12 @@ import { useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/contactsOps';
 
 
-const Contact = ({ contactData }) => {
+const Contact = ({ contact }) => {
   const dispatch = useDispatch();
 
-  const { contact, id } = contactData || {};
-
-  if (!contact) {
-    return <div>No contact information available</div>;
-  }
+  const handleDelete = () => {
+    dispatch(deleteContact(contact.id));
+  };
   return (
     <>
     <div className = {style.contact}>
@@ -31,7 +29,7 @@ const Contact = ({ contactData }) => {
       <button
         className={style.button}
         type="button"
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={handleDelete}
       >
         Delete
       </button>
